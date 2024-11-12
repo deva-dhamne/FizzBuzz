@@ -5,6 +5,14 @@ namespace FizzBuzzUnitTests
 {
     public class FizzBuzzShould
     {
+        [Fact]
+        public void Return_SimpleNumber_Fact()
+        {
+            var result = FizzBuzz.Calculate(1);
+
+            result.Should().Be("1");
+        }
+
         [Theory]
         [InlineData(1, "1")]
         [InlineData(2, "2")]
@@ -16,6 +24,13 @@ namespace FizzBuzzUnitTests
             result.Should().Be(expectedSimpleNumber);
         }
 
+        [Fact]
+        public void Return_FizzNumber_Fact()
+        {
+            var result = FizzBuzz.Calculate(3);
+
+            result.Should().Be("Fizz");
+        }
 
         [Theory]
         [InlineData(3, "Fizz")]
@@ -31,6 +46,14 @@ namespace FizzBuzzUnitTests
             result.Should().Be(expectedFizzNumber);
         }
 
+        [Fact]
+        public void Return_BuzzNumber_Fact()
+        {
+            var result = FizzBuzz.Calculate(5);
+
+            result.Should().Be("Buzz");
+        }
+
         [Theory]
         [InlineData(5, "Buzz")]
         [InlineData(10, "Buzz")]
@@ -41,6 +64,14 @@ namespace FizzBuzzUnitTests
             var result = FizzBuzz.Calculate(number);
 
             result.Should().Be(expectedBuzzNumber);
+        }
+
+        [Fact]
+        public void Return_FizzBuzzNumber_Fact()
+        {
+            var result = FizzBuzz.Calculate(15);
+
+            result.Should().Be("FizzBuzz");
         }
 
         [Theory]
